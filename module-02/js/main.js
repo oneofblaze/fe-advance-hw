@@ -10,24 +10,24 @@
    выбрал такой-то курорт или сообщение о том, что введено
    число, варианта курорта для которого не было.
 */
-let res;
+let resort;
 
 let num = prompt('Введите число от 1 до 3-х', 1);
 
 switch (num) {
-  case '1' : res = "taba"; break;
-  case '2' : res = "sharm"; break;
-  case '3' : res = "hurgada"; break; 
-  default  : res = "Введите верное число!";
+  case '1' : resort = "taba"; break;
+  case '2' : resort = "sharm"; break;
+  case '3' : resort = "hurgada"; break; 
+  default  : resort = "Введите верное число!";
 }
 
 if (num === "1") {
-  console.log(`Пользователь выбрал курорт - ${res}!`);
+  alert(`Пользователь выбрал курорт - ${resort}!`);
 } else if (num === "2") {
-  console.log(`Пользователь выбрал курорт - ${res}!`);
+  alert(`Пользователь выбрал курорт - ${resort}!`);
 } else if (num === "3") {
-  console.log(`Пользователь выбрал курорт - ${res}!`);
+  alert(`Пользователь выбрал курорт - ${resort}!`);
 } else {
-  console.log(`Для указанного числа варианта курорта нет!`);
+  alert(`Для указанного числа варианта курорта нет!`);
 }
 
