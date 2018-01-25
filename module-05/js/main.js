@@ -67,6 +67,6 @@ function getRandCharInAlph() {
     console.log(resRow); //отслеживаем выбор layouts 
     console.log(randRowName); //отслеживаем выбор случайной раскладки
     console.log(str); //отслеживаем выбор случайной строки
-    alert(str[randItem]); //выводим случайный символ
+    alert('Случайный символ - \"'+str[randItem]+'\"'); //выводим случайный символ
 }
 getRandCharInAlph();
