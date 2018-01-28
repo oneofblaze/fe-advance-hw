@@ -23,54 +23,57 @@ chars: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g
 const keyTrainer = {
     chars: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'],
     charCount: '',
-    setCharCount: {},
-    checkPositiveInteger: {},
-    checkPositiveInteger: {},
+    setCharCount: function() {
+        while (keyTrainer.checkPositiveInteger() !== true);
+        let num = prompt('Введите количество символов для тренажера:', 1);
+        return keyTrainer.charCount = num;
+    },
+    checkPositiveInteger: function(num) {
+        return (num ^ 0) === num;
+    },
     task: '',
-    createTask: {},
-    startTask: {},
+    createTask: function() {
+        array = [];
+        for (var i = 0; i < keyTrainer.charCount; i++) {
+            var rand = Math.floor(Math.random() * keyTrainer.chars.length);
+        }
+        return keyTrainer.task = array.push(keyTrainer.chars[rand]);
+    },
+    startTask: function(){
+        var value = prompt(`Введите, пожалуйста, следующие символы: ${keyTrainer.task} в строке ниже`, "");
+        var ln1 = task.length
+        var ln2 = array2.length;
+        var err = 0
+        for (var i = 0; i < ln1; ++i) {
+            cache = task[i];
+            for (var j = 0; j < ln2; ++j) {
+                if (cache !== array2[j]) {
+                    err = err + 1;
+                }
+            }
+        }
+        keyTrainer.userErrors = err;
+        return keyTrainer.userInput = value.split('');
+
+    },
     userInput: '',
     userErrors: '',
 };
 
-
-// let num
-// while (num !== "0" && num !== "1" && num !== "2") {
-//     num = prompt('Выберите, пожалуйста, язык раскладки: en - 0; ru - 1; ua - 2.', 0);
-//     if (num == "0") {
-//         keyboard.currentLang = '0 это en';
-//     } else if (num == "1") {
-//         keyboard.currentLang = '1 это ru';
-//     } else if (num == "2") {
-//         keyboard.currentLang = '2 это ua';
-//     } else if (confirm("Ошибка ввода! Введите верный код раскладки") !== true) break;
-//     else continue;
-// }
-// console.log(keyboard);
-
-
+console.log(keyTrainer);
+console.log(keyTrainer.checkPositiveInteger(5));
+console.log(keyTrainer.createTask());
 
 function run() {
-    // let res;
-    // if (keyboard.currentLang == '0 это en') {
-    //     res = keyboard.layouts.en;
-    // } else if (keyboard.currentLang == '1 это ru') {
-    //     res = keyboard.layouts.ru;
-    // } else if (keyboard.currentLang == '2 это ua') {
-    //     res = keyboard.layouts.ua;
-    // } else {
-    //     console.log('Что-то пошло не так...')
-    // };
-
-    // let resRow = Object.keys(res);
-    // let randRow = Math.floor(Math.random() * (resRow.length));
-    // let randRowName = resRow[randRow];
-    // let arr = res[randRowName];
-    // let str = arr.join('');
-    // let randItem = Math.floor(Math.random() * (str.length));
-    // console.log(resRow); //отслеживаем выбор layouts 
-    // console.log(randRowName); //отслеживаем выбор случайной раскладки
-    // console.log(str); //отслеживаем выбор случайной строки
-    // alert('Случайный символ - \"' + str[randItem] + '\"'); //выводим случайный символ
+    keyTrainer.setCharCount();
+    keyTrainer.checkPositiveInteger();
+    keyTrainer.createTask();
+    keyTrainer.startTask();
+    if (keyTrainer.userErrors === 0) {
+        console.log('Поздравляем! Вы успешно посвторили набор текста!');
+    } else {
+        console.log(`Пользователь, при наборе вы совершили ${keyTrainer.userErrors} ошибок.\
+        Желаем удачи при следующей попытке!`)
+    }
 }
-getRandCharInAlph();
+run();
