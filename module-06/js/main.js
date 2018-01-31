@@ -23,46 +23,51 @@ chars: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g
 const keyTrainer = {
     chars: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'],
     charCount: '',
-    setCharCount: function() {
-        while (keyTrainer.checkPositiveInteger() !== true);
-        let num = prompt('Введите количество символов для тренажера:', 1);
-        return keyTrainer.charCount = num;
-    },
-    checkPositiveInteger: function(num) {
-        return (num ^ 0) === num;
-    },
-    task: '',
-    createTask: function() {
-        array = [];
-        for (var i = 0; i < keyTrainer.charCount; i++) {
-            var rand = Math.floor(Math.random() * keyTrainer.chars.length);
+    setCharCount() {
+        let num
+        while (this.checkPositiveInteger(num) === false) {
+            num = +prompt('Введите количество символов для тренажера:', 1);
         }
-        return keyTrainer.task = array.push(keyTrainer.chars[rand]);
+        return this.charCount = num;
     },
-    startTask: function(){
-        var value = prompt(`Введите, пожалуйста, следующие символы: ${keyTrainer.task} в строке ниже`, "");
-        var ln1 = task.length
-        var ln2 = array2.length;
-        var err = 0
-        for (var i = 0; i < ln1; ++i) {
-            cache = task[i];
-            for (var j = 0; j < ln2; ++j) {
-                if (cache !== array2[j]) {
+    checkPositiveInteger(x) {
+        return (Number.isInteger(x) && x > 0);
+    },
+    task: [],
+    createTask() {
+        let array = [];
+        let str = this.chars;
+        for (let i = 0; i < this.charCount; i++) {
+            var rand = Math.floor(Math.random() * str.length);
+            array.push(str[rand]);
+        }
+        return this.task = array;
+    },
+    startTask() {
+        let value = prompt(`Введите, пожалуйста, следующие символы: "${this.task}" в строке ниже`, "");
+        this.userInput = value.split('');
+        let arr1 = this.task;
+        let arr2 = this.userInput;
+        let ln1 = this.task.length;
+        let ln2 = this.userInput.length;
+        let err = 0
+        for (let i = 0; i < ln1; i++) {
+            for (let j = 0; j < ln2; j++) {
+                if (arr1[i] === arr2[j]) {
+                    i = i + 1;
+                } else {
+                    i = i + 1;
                     err = err + 1;
                 }
             }
         }
-        keyTrainer.userErrors = err;
-        return keyTrainer.userInput = value.split('');
-
+        return this.userErrors = err;
     },
-    userInput: '',
+    userInput: [],
     userErrors: '',
 };
-
 console.log(keyTrainer);
-console.log(keyTrainer.checkPositiveInteger(5));
-console.log(keyTrainer.createTask());
+
 
 function run() {
     keyTrainer.setCharCount();
@@ -70,10 +75,18 @@ function run() {
     keyTrainer.createTask();
     keyTrainer.startTask();
     if (keyTrainer.userErrors === 0) {
-        console.log('Поздравляем! Вы успешно посвторили набор текста!');
+        console.log('Поздравляем! Вы успешно повторили набор текста!');
     } else {
         console.log(`Пользователь, при наборе вы совершили ${keyTrainer.userErrors} ошибок.\
         Желаем удачи при следующей попытке!`)
     }
 }
 run();
+
+// setCharCount() {
+//     let num;
+//     while ((Number.isInteger(num) !== true) && (isFinite(num) !== true) || (num <= 0)) {
+//         num = prompt('Введите количество символов для тренажера:', 1);
+//     }
+//     return keyTrainer.charCount = num;
+// },
