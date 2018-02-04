@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link href="css/reset.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
 	<title>Module-7</title>
 </head>
 
 <body>
 	<div class="wrapper">
 		<article>
-			<section>
+			<div>
 				<h1>
-					<a href="js/main.js">Модуль 6 - Домашнее задание</a>
+					<a href="js/main.js">Модуль 7 - Домашнее задание</a>
 				</h1>
+				<p>Визуализируем клавиатуру.</p>
 				<ul>
-					<li>Создайте объект <b>keyTrainer</b>, содержащий свойство <b>chars</b>, значением которого будет массив символов алфавита. <b>chars: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']</b></li>
-					<li>Добавьте свойство <b>charCount</b> и метод <b>setCharCount</b>. Метод делает запрос через <b>prompt</b> о количестве символов, которые пользователь должен будет набрать.</li>
-					<li>Добавьте метод <b>checkPositiveInteger</b>, который проверяет является ли число целым положительным числом. Используйете метод <b>checkPositiveInteger</b> в методе <b>setCharCount</b> для проверки корректности ввода пользователем. Если ввод неверный, используйте цикл <b>while</b> для того чтобы запрашивать у пользователя верное число (целое положительное).</li>
-					<li>Создайте свойство <b>task</b> и метод <b>createTask</b>, который создает массив длинной в <b>charCount</b> и заполняет его случайными буквами из массива chars.</li>
-					<li>Создайте метод <b>startTask</b>, который с помощью <b>prompt</b> выводит строку из массива <b>task</b> и просит набрать эту строку в этом же <b>prompt</b> сообщении.</li>
-					<li>Результат, полученный методом <b>startTask</b> запишите в свойство <b>userInput</b> и затем сравните строки <b>userInput</b> и <b>task</b> посимвольно. Если симовол не совпадает, то запишите количество ошибок в свойство <b>userErrors</b>.</li>
-					<li>Выведите в консоль <b>userErrors:</b> eсли количество ошибок 0, то поздравьте, если отлично от ноля - напишите количество ошибок и пожелание успехов в следующем упражнении.</li>
+					<li>Написать метод <b>createLayout()</b> который создает клавиатуру состоящую из 3-х строк, в каждой строке такое кол-во кнопок как длины <b>topRow/middleRow</b> и <b>bottomRow полей</b>.</li>
+					<li>Можно использовать либо <b>createElement</b> либо создавать строку из тегов и вешать через <b>insertAdjacentHTML</b> или <b>innerHTML</b>.</li>
+					<li>Добавить минимальное оформление на свой вкус.</li>
 				</ul>
-						<p>Все свойства и методы должны быть внутри одного объекта <b>keyTrainer</b>, но вызов по очереди всех методов поместите внутри функции run и затем вызовите эту функцию.</p>
-			</section>
+
+			</div>
 		</article>
 	</div>
 	<script src="js/main.js"></script>
