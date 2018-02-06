@@ -17,34 +17,23 @@ const virtualKeyboard = {
         let ln1 = virtualKeyboard.layouts.topRow.length;
         let ln2 = virtualKeyboard.layouts.middleRow.length;
         let ln3 = virtualKeyboard.layouts.bottomRow.length;
-        console.log(ln1, ln2, ln3);
+        // console.log(ln1, ln2, ln3);
 
-
-        // for (let i = 0; i < ln1; i++) {
-        //     const item = document.createElement("div");
-        //     item.classList.add("btn");
-        //     item.textContent = `${virtualKeyboard.layouts.topRow[i]}`;
-        //     const nav = document.querySelector("article");
-        //     nav.appendChild(item);
-        // };
         for (let i = 0; i < ln1; i++) {
-            const list = document.querySelector('article');
+            const list = document.querySelector('.topRow');
             list.insertAdjacentHTML('beforeend', `<div class="btn" >${virtualKeyboard.layouts.topRow[i]}</div>`);
         };
         for (let i = 0; i < ln2; i++) {
-            const list = document.querySelector('article');
-            list.insertAdjacentHTML('beforeend', `<div>${virtualKeyboard.layouts.middleRow[i]}</div>`);
+            const list = document.querySelector('.middleRow');
+            list.insertAdjacentHTML('beforeend', `<div class="btn">${virtualKeyboard.layouts.middleRow[i]}</div>`);
         };
         for (let i = 0; i < ln3; i++) {
-            const list = document.querySelector('article');
-            list.insertAdjacentHTML('beforeend', `<div>${virtualKeyboard.layouts.bottomRow[i]}</div>`);
+            const list = document.querySelector('.bottomRow');
+            list.insertAdjacentHTML('beforeend', `<div class="btn">${virtualKeyboard.layouts.bottomRow[i]}</div>`);
         };
         return console.log(document.querySelector('article'));
-
-
     },
 };
-
 
 console.log(virtualKeyboard);
 virtualKeyboard.createLayout();

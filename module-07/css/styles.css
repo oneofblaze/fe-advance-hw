@@ -1,0 +1,17 @@
+.topRow,
+.middleRow,
+.bottomRow {
+	display: flex;
+	flex-direction: row;
+}
+
+.btn {
+	margin: 2px;
+	width: 30px;
+	height: 30px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 30px;
+	border: 2px solid grey;
+	border-radius: 3px;
+}
