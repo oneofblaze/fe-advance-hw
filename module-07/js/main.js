@@ -21,15 +21,15 @@ const virtualKeyboard = {
 
         for (let i = 0; i < ln1; i++) {
             const list = document.querySelector('.topRow');
-            list.insertAdjacentHTML('beforeend', `<div class="btn" >${virtualKeyboard.layouts.topRow[i]}</div>`);
+            list.insertAdjacentHTML('beforeend', `<button class="btn" >${virtualKeyboard.layouts.topRow[i]}</button>`);
         };
         for (let i = 0; i < ln2; i++) {
             const list = document.querySelector('.middleRow');
-            list.insertAdjacentHTML('beforeend', `<div class="btn">${virtualKeyboard.layouts.middleRow[i]}</div>`);
+            list.insertAdjacentHTML('beforeend', `<button class="btn">${virtualKeyboard.layouts.middleRow[i]}</button>`);
         };
         for (let i = 0; i < ln3; i++) {
             const list = document.querySelector('.bottomRow');
-            list.insertAdjacentHTML('beforeend', `<div class="btn">${virtualKeyboard.layouts.bottomRow[i]}</div>`);
+            list.insertAdjacentHTML('beforeend', `<button class="btn">${virtualKeyboard.layouts.bottomRow[i]}</button>`);
         };
         return console.log(document.querySelector('article'));
     },
