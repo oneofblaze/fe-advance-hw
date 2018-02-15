@@ -10,12 +10,40 @@
 */
 
 const playSound = note => {
-    const audio = document.querySelector(`audio[data-note=${note}]`);
-    audio.currentTime = 0;
-    audio.play();
+  const audio = document.querySelector(`audio[data-note=${note}]`);
+  audio.currentTime = 0;
+  audio.play();
 };
-
 const buttons = Array.from(document.querySelectorAll("button"));
-console.log(buttons);
+console.log(buttons[0], buttons.length);
 const keys = "qwertyuiop[]asdfghjkl;'zxcvbnm,./".split("");
-// window.addEventListener("keydown", callback);
+console.log(keys);
+// const keyboard = document.querySelectorAll("button");
+console.log(buttons);
+
+const onPush = event => {
+  if (keys.includes(event.key)) {
+    console.log(event.key); // входит символ с клавиатуры;
+    if (event.key === buttons.find(event.key.innerHTML)) {
+      event.key.classList.add('keyboard__btn--active');
+      if (soundCheckbox.checked) {
+        playSound(event.key.dataset.note);
+      }
+    }
+  }
+};
+window.addEventListener("keydown", onPush);
+
+//Пример:
+// const onPush = event => {
+//   if(keys.includes(event.key)){
+//     let currentButton = buttons.find((a) => a.innerHTML === event.key || a.innerHTML === "space" );
+//     let note = currentButton.classList.add('keyboard__btn--active');
+//     setTimeout(()=>currentButton.classList.remove('keyboard__btn--active'), 100);
+//     let soundCheckbox = document.getElementById('slideThree');
+//     if(soundCheckbox.checked){
+//       playSound(currentButton.dataset.note);
+//       }
+//     }
+// };
+// window.addEventListener("keydown", onPush);
