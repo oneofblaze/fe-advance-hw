@@ -15,16 +15,16 @@ const playSound = note => {
   audio.play();
 };
 const buttons = Array.from(document.querySelectorAll("button"));
-const keys = "qwertyuiop[]asdfghjkl;'zxcvbnm,./ ".split(""); // добавил "пробел", что бы правильно срабатывал event.key.
+const keys = "qwertyuiop[]asdfghjkl;'zxcvbnm,./ ".split(""); // добавил "пробел", что бы правильно срабатывал event.key;
 
 
 const onPush = event => {
   if (keys.includes(event.key)) {
     let arg; //переменная для стрелочной ф-и.
-    let currentButton = buttons.find((arg) => arg.innerHTML === event.key || arg.innerHTML === 'space'); //ищем в массиве buttons кнопку, которую мы нажали
-    currentButton.classList.add('keyboard__btn--active'); // присваиваем класс с подсветкой
+    let currentButton = buttons.find((arg) => arg.innerHTML === event.key || arg.innerHTML === 'space'); //ищем в массиве buttons кнопку, которую мы нажали;
+    currentButton.classList.add('keyboard__btn--active'); // присваиваем класс с подсветкой;
 
-    setTimeout(() => currentButton.classList.remove('keyboard__btn--active'), 200); //убираем класс через 200мс
+    setTimeout(() => currentButton.classList.remove('keyboard__btn--active'), 200); //убираем класс через 200мс;
 
     let soundCheckbox = document.getElementById('slideThree');
     if (soundCheckbox.checked) {
