@@ -15,7 +15,7 @@ const playSound = note => {
   audio.play();
 };
 const buttons = Array.from(document.querySelectorAll("button"));
-const keys = "qwertyuiop[]asdfghjkl;'zxcvbnm,./".split("");
+const keys = "qwertyuiop[]asdfghjkl;'zxcvbnm,./ ".split(""); // добавил "пробел", что бы правильно срабатывал event.key.
 
 
 const onPush = event => {
