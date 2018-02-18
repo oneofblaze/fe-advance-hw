@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link href="css/styles.css" rel="stylesheet">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Module-9-hw</title>
+</head>
+
+<body>
+	<script type="test/lodash" id="testLodash">
+		<h1>Была нажата клавиша:<span class="pressed"></span></h1>
+        <div class="keyboard">
+            <% en.forEach(row => { %>
+                <div class="keyboard__row">
+                    <% row.forEach(item => { %>
+                        <button class="keyboard__btn"><%- item %></button>
+                        <% }); %>
+                </div>
+                <% }); %>
+		        <div class="keyboard__row">
+					<button class="keyboard__btn keyboard__btn--space">space</button>
+				</div>
+		</div>		
+	</script>
+
+	<div id="output"></div>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
