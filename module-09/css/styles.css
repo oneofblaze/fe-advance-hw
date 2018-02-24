@@ -340,6 +340,7 @@ video {
 
 .keyboard__btn--space {
 	width: 20rem;
+	
 }
 
 .keyboard__btn--active {
@@ -495,19 +496,7 @@ video {
 }
 
 .pressed {
-	margin: auto 20px;
-	font-size: 48px;
-	height: 60px;
-	line-height: 60px;
-	width: 60px;
-	cursor: pointer;
-	background: #727272;
-	color: #eee;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-pack: distribute;
-	justify-content: space-around;
+	color: #43a047;
 }
 
 .keyboard {
