@@ -10,45 +10,71 @@
   это будет компонент лучшего результата.
 */
 // дается строка и от первого нажатия до посленего правильного набранного знака считать время
+
 const lang = "qwerty";
 const string = "qryte";
-const charsArr = string.split("").reverse();
+
+function str_rand() { //вставил функцию генерации случайных символов
+  var result = '';
+  var words = lang;
+  var max_position = words.length - 1;
+  for (i = 0; i < 5; ++i) {
+    position = Math.floor(Math.random() * max_position);
+    result = result + words.substring(position, position + 1);
+  }
+  return result;
+}
+const charsArr = str_rand(lang);
+
 const timerOutput = document.querySelector(".timer");
+let exercise = document.querySelector(".exercise");
+let keyboard = document.querySelector(".keyboard");
+let resultExercise = document.querySelector(".result");
 
-const exerciseOutput = document.querySelector(".exercise");
-const keyboard = document.querySelector(".keyboard");
+exercise.textContent = `Повторите строку случайных символов - ${charsArr}`;
+exercise.appendChild(timerOutput);
 
+
+
+
+let time = 0;
+let letters = 5;
+let userString = [];
 let arrMain = [];
-let counter = 0;
-let allKeys = [];
 
-let time = setInterval(() => {
-  counter++;
-  timerOutput.innerHTML = counter;
+
+let timer = setInterval(function () {
+  time++;
+  timerOutput.textContent = time;
 }, 1000);
 
-// keyboard.textContent = `Повторите, пожалуйста, набор символов указанный выше.`;
-exerciseOutput.innerHTML = string;
-keyboard.textContent = `Your last result: 5 letters in ${localStorage.getItem("data")} sec`;
+resultExercise.textContent = `Наилучший результат: ${localStorage.getItem("dataText")} за ${localStorage.getItem("dataTimer")} секунд`;
 
-window.addEventListener("keydown", function (e) {
-  allKeys.push(e.key);
-  if (allKeys.length <= 5) {
-    if (charsArr.includes(e.key)) {
+function onPush(e) {
+  userString.push(e.key);
+  if (userString.length <= 5) {
+    if (charsArr.includes(e.key)) { // засчитываем только те символы, которые есть в примере
       arrMain.push(e.key);
       if (arrMain.length == 5) {
         for (let i = 0; i < arrMain.length; i++) {
           if (arrMain[i] == charsArr[i]) {
-            clearInterval(time);
+            clearInterval(timer);
             keyboard.textContent = "";
-            keyboard.textContent = `Your result: 5 letters in ${counter} sec`;
-            localStorage.setItem("data", JSON.stringify(counter));
+            keyboard.textContent = `Ваш результат: 5 символов за ${time} секунд`;
+            localStorage.setItem("dataTimer", JSON.stringify(time));
+            localStorage.setItem("dataText", JSON.stringify(charsArr));
+          } else {
+            clearInterval(timer);
+            keyboard.textContent = "Вы набрали неверный текст! Необходима дополнительная тренеровка на клавиатурном тренажере.";
           }
         }
       }
     }
   } else {
-    clearInterval(time);
-    keyboard.textContent = "Ваш результат хуже предыдущего!";
+    clearInterval(timer);
+    keyboard.textContent = "Ваш результат хуже предыдущего! Необходима дополнительная тренеровка на клавиатурном тренажере.";
   }
-});
+};
+window.addEventListener("keydown", onPush);
+
+// countKPS();
