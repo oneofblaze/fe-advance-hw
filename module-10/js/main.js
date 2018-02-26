@@ -3,7 +3,7 @@
 - Простой прямоугольник который показывает время со старта упражения и до того момента когда все 
   клавиши были верно нажаты.
 - На входе есть строка символов для упражнения.   
-- Написать метод countKPS() который,по окончанию упражнения,  возвращает кол-во верных клавишь
+- Написать метод countKPS() который, по окончанию упражнения, возвращает кол-во верных клавишь
   в секунду которое было нажато за время выполнения упражнения.
 - Записать результат в localStorage, но только в том случае если он лучше чем тот что уже есть в localStorage.
 - При повторном посещении страницы надо брать то что записано в localStorage и вешать на страницу,
@@ -14,7 +14,7 @@
 const lang = "qwerty";
 const string = "qryte";
 
-function str_rand() { //вставил функцию генерации случайных символов
+function str_rand() { //Вставил функцию генерации случайных символов. Можно в lang поствить всю клавиатуру и получить нормальный тренажер.
   var result = '';
   var words = lang;
   var max_position = words.length - 1;
@@ -34,9 +34,6 @@ let resultExercise = document.querySelector(".result");
 exercise.textContent = `Повторите строку случайных символов - ${charsArr}`;
 exercise.appendChild(timerOutput);
 
-
-
-
 let time = 0;
 let letters = 5;
 let userString = [];
@@ -50,6 +47,11 @@ let timer = setInterval(function () {
 
 resultExercise.textContent = `Наилучший результат: ${localStorage.getItem("dataText")} за ${localStorage.getItem("dataTimer")} секунд`;
 
+function countKPS(arg){ // метод countKPS, толку от него нет можно было заменить формулой прямо в ответе, но такое условие д.з.
+  let countKP = arg/charsArr.length;
+  return countKP;
+}
+
 function onPush(e) {
   userString.push(e.key);
   if (userString.length <= 5) {
@@ -60,7 +62,7 @@ function onPush(e) {
           if (arrMain[i] == charsArr[i]) {
             clearInterval(timer);
             keyboard.textContent = "";
-            keyboard.textContent = `Ваш результат: 5 символов за ${time} секунд`;
+            keyboard.textContent = `Ваш результат: 5 символов за ${time} секунд. T.e 1 символ за ${countKPS(time)} секунды`;
             localStorage.setItem("dataTimer", JSON.stringify(time));
             localStorage.setItem("dataText", JSON.stringify(charsArr));
           } else {
@@ -77,4 +79,4 @@ function onPush(e) {
 };
 window.addEventListener("keydown", onPush);
 
-// countKPS();
+
