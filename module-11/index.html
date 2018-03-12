@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link href="css/styles.css" rel="stylesheet">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Module-11-hw</title>
+</head>
+
+<body>
+	<h1>Модуль 11. Условие (до изменения):</h1>
+	<p>Написать приложение для работы с REST сервисом http://fecore.net.ua/rest/. Реализовать следующий функционал:</p>
+	<ol>
+		<li>функция getUsers должна получать текущий список всех пользователей в БД.</li>
+		<li>функция addUser должна записывать в БД юзера с полями name и score.</li>
+		<li>функция removeUser должна удалять из БД юзера по id.</li>
+		<li>функция updateUser должна обновлять данные пользователя по id.</li>
+
+	</ol>
+	<h1>Модуль 11. Выполнение:</h1>
+	<div class="wrapper">
+		<form class="add_user">
+			<fieldset>
+				<legend>Форма введения нового User</legend>
+				<input type="text" class="inputs__name" placeholder="Darth Bane">
+				<input type="text" class="inputs__score" placeholder="1000">
+				<button class="addButton">Add User</button>
+			</fieldset>
+		</form>
+		<form class="remove_user">
+			<fieldset>
+				<legend>Форма удаления сущесвующего User по ID</legend>
+				<input type="text" class="inputs__id" placeholder="id:0001">
+				<button class="removeButton">Remove</button>
+			</fieldset>
+		</form>
+		<form class="update_user">
+			<fieldset>
+				<legend>Форма редактирование сущесвующего User</legend>
+				<input type="text" class="inputs__id" placeholder="id:0001">
+				<input type="text" class="inputs__name" placeholder="Darth Bane">
+				<input type="text" class="inputs__score" placeholder="1000">
+				<button class="updateButton">Update</button>
+			</fieldset>
+		</form>
+		<div class="resultClick"></div>
+		<div class="dataBaseList">
+			<button class="dataBaseListButton">Show Data Base</button>
+		</div>
+	</div>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
