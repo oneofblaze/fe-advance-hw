@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css'>
+	<link href="css/styles.css" rel="stylesheet">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Module-13-hw</title>
+</head>
+
+<body>
+	<h2>Модуль 13</h2>
+	<p>Реализовать следующий функционал:</p>
+	<ol>
+		<li>Напишите функцию validate которая проверяет все поля формы и возвращает результат в виде обьекта со свойствами firstname, lastname и tel.</li>
+		<li>Кроме того, формат объекта: в свойства записывается буль-флаг уведомляющий о статусе прохождения валидации для поля.</li>
+		<li>При клике на кнопку submit должна происходить проверка.</li>
+		<li>Написать функцию showResults(results), которая принимает один аргумент results - объект такого формата который возвращает функция validate, и создает html разметку по результатам этого объекта.</li>
+		<li>showResults добавляет в список с классом .results (уже есть в html), li для каждого поля формы. В li записать: SUCCESS: 'имя поля' passed validation ERROR: 'имя поля' failed validation</li>
+		<li>Для li с положительным результатом дать класс success, с отрицательным error.</li>
+
+	</ol>
+	<div class="container">
+		<div class="row">
+			<form class="col s12 m6" acrion="#">
+				<div class="row">
+					<div class="input-field col s9">
+						<input placeholder="First name" id="first_name" type="text" class="validate" pattern="[A-Za-z]{2,12}">
+						<label for="first_name"></label>
+					</div>
+					<div class="input-field col s9">
+						<input placeholder="Last name" id="last_name" type="text" class="validate" pattern="[A-Za-z]{2,12}">
+						<label for="last_name"></label>
+					</div>
+					<div class="input-field col s9">
+						<input placeholder="tel +380 44 333 22 11" id="tel" type="text" class="validate" pattern="[0-9]{3}\s[0-9]{2}\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}">
+						<label for="tel"></label>
+					</div>
+					<div class="col s9">
+						<button class="btn waves-effect waves-light" id="submit-btn" type="submit" name="action">Submit</button>
+					</div>
+				</div>
+			</form>
+			<ul class="results col s12"></ul>
+		</div>
+	</div>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
