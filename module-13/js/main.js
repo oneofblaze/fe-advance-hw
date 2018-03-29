@@ -45,13 +45,13 @@ function validate(evt) {
   objRes.boolLastName = inputs[1].checkValidity();
   objRes.boolTel = inputs[2].checkValidity();
   
-  if(inputs[0].checkValidity()){
+  if (inputs[0].checkValidity()) {
     objRes.firstname = inputs[0].value;
   }
-  if(inputs[1].checkValidity()){
+  if (inputs[1].checkValidity()) {
     objRes.lastname = inputs[1].value;
   }
-  if(inputs[2].checkValidity()){
+  if (inputs[2].checkValidity()) {
     objRes.tel = inputs[2].value;
   }
   
@@ -66,25 +66,31 @@ function showResults(results) {
   
   let lisFirst = document.createElement("li");
   if(objRes.boolFirstName){
-    lisFirst.textContent = objRes.firstname;
+    lisFirst.textContent = objRes.firstname + " - SUCCESS: 'First name' passed validation";
+    lisFirst.classList.add('success');
   } else {
-    lisFirst.textContent = "Error";
+    lisFirst.textContent = "ERROR: 'First name' failed validation";
+    lisFirst.classList.add('error');
   }
   resultsList.appendChild(lisFirst);
 
   let lisLast = document.createElement("li");
   if(objRes.boolLastName){
-    lisLast.textContent = objRes.lastname;
+    lisLast.textContent = objRes.lastname + " - SUCCESS: 'Last name' passed validation";
+    lisLast.classList.add('success');
   } else {
-    lisLast.textContent = "Error";
+    lisLast.textContent = "ERROR: 'Last name' failed validation";
+    lisLast.classList.add('error');
   }
   resultsList.appendChild(lisLast);
 
   let lisTel = document.createElement("li");
   if(objRes.boolTel){
-    lisTel.textContent = objRes.tel;
+    lisTel.textContent = objRes.tel + " - SUCCESS: 'tel' passed validation";
+    lisTel.classList.add('success');
   } else {
-    lisTel.textContent = "Error";
+    lisTel.textContent = "ERROR: 'tel' failed validation";
+    lisTel.classList.add('error');
   }
   resultsList.appendChild(lisTel);
 }
