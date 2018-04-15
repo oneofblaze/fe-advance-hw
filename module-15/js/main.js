@@ -1,33 +1,77 @@
 /*
-1. Создать две кнопки в HTML: start и stop.
-2. Реализовать функционал таймера отсчета старта печати через функцию-конструктор со свойсвами 
-startTime, stopTime и interval. Добавить в prototype методы start и stop.
-3. При нажатии на кнопку start, функция сохраняет момент нажатия в свойство startTime.
-4. При нажатии на кнопку stop, функция сохраняет значение текущего момента времени в stopTime 
-и записывает разницу между startTime и stopTime в interval.
-5. При нажатии на stop, значение interval выводится в консоль.*/
+1) Создать две кнопки в HTML: start и stop.
+2) Создать класс Timer с полями startTime, stopTime и interval. Создать несколько экземпляров класса с разными значениями свойств, вывести их в консоль.
+3) Для класса Timer создать методы start и stop, getTime.
+4) Создать экземпляр класса Timer, пусть он называется stopwatch.
+5) При нажатии на кнопку start, метод stopwatch.start сохраняет момент нажатия в свойство startTime.
+6) При нажатии на кнопку stop, метод stopwatch.stop сохраняет значение текущего момента времени в stopTime и записывает 
+разницу между startTime и stopTime в interval. А метод stopwatch.getTime возвращает значение поля interval, которое необходимо вывести в консоль.
+7) Для класса Timer создать статический метод timeToNY который возвращает кол-во дней от сегодня и до Нового Года.*/
 
-const startButton = document.querySelector("#start");
-const stopButton = document.querySelector("#stop");
-const timerResult = document.querySelector("#timer_result");
+let startButton = document.querySelector("#start");
+let stopButton = document.querySelector("#stop");
+let timerResult = document.querySelector("#timer_result");
+let txtResult = document.createElement("p");
+timerResult.after(txtResult);
 
-function Timer() {}
+let timeNewYear = new Date("December 31 2018 23:59");
 
-Timer.prototype.startTimer = function() {
-    this.startTime = Date.now();
+let time = 0;
+let timer = {};
+
+
+class Timer {
+    constructor(startTime, stopTime, interval) {
+        this.startTime = start;
+        this.stopTime = stop;
+        this.interval = interval;
+    };
+    start() {
+        timer = setInterval(function () {
+            time++;
+            timerResult.textContent = time;
+        }, 1000);
+        this.startTime = time;
+    };
+
+    stop() {
+        clearInterval(timer);
+        this.stopTime = time;
+        let someRes = Math.floor(this.stopTime - this.startTime);
+        this.interval = someRes;
+
+    };
+
+    getTime() {
+        console.log(this.interval);
+    };
+
+    static timeToNY() {
+        let today = new Date();
+        let leftTime = timeNewYear.getTime() - today.getTime();
+        let leftDate = Math.floor(leftTime / 86400000);
+
+        return leftDate;
+    };
+
 }
 
-Timer.prototype.stopTimer = function() {
-    this.stopTime = Date.now();
-    this.interval = this.stopTime - this.startTime;
-    console.log(this.interval);
-    timerResult.textContent = this.interval + " миллисекунд или ~ " + Math.floor(this.interval / 1000) + " секунд";
+let time1 = new Timer(10, 15, 5);
+let time2 = new Timer(16, 20, 4);
+let time3 = new Timer(21, 25, 4);
 
-}
+let stopwatch = new Timer();
 
-let currentInterval = new Timer();
-let setStart = currentInterval.startTimer.bind(currentInterval);
-let setStop = currentInterval.stopTimer.bind(currentInterval);
+startButton.addEventListener('click', startWatchTime);
+stopButton.addEventListener('click', stopWatchTime);
 
-startButton.addEventListener("click", setStart);
-stopButton.addEventListener("click", setStop);
+
+function startWatchTime() {
+    stopwatch.start();
+};
+
+function stopWatchTime() {
+    stopwatch.stop();
+    stopwatch.getTime();
+    txtResult.textContent = `До Нового Года осталось ${Timer.timeToNY()} дней!`;
+};
