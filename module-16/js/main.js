@@ -1,5 +1,5 @@
 /*Описание задачи в index.html*/
-/*создаем класс Shape*/
+/*Создаем класс Shape с методами getColor(), setColor(val), getCoords(), moveTo(newX, newY)*/
 class Shape {
 	constructor(color, initX, initY) {
 		this.color = color;
@@ -20,7 +20,7 @@ class Shape {
 		this.initY = newY;
 	};
 }
-/*создаем потомок класса Shape - класс Rectangle*/
+/*Создаем класс Rectangle который расширяет класс Shape,*/
 class Rectangle extends Shape {
 	constructor(color, initX, initY, initWidth, initHeight) {
 		super(color, initX, initY);
@@ -45,10 +45,10 @@ class Rectangle extends Shape {
                    Filled with color: ${this.color}`);
 	};
 }
-/*создаем потомок класса Rectangle - класс Circle*/
+/*Создаем класс Circle который расширяет класс Shape*/
 class Circle extends Rectangle {
-	constructor(color, initX, initY, initWidth, initHeight, initRadius) {
-		super(color, initX, initY, initWidth, initHeight);
+	constructor(color, initX, initY, initRadius) {
+		super(color, initX, initY);
 		this.initRadius = initRadius;
 	}
 	getRadius() {
