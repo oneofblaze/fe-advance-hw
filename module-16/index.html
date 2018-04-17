@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<link href="css/styles.css" rel="stylesheet">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Module-15-hw</title>
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<title>Module-16-hw</title>
 </head>
-
 <body>
-	<h2>Модуль 15</h2>
+	<h2>Модуль 16</h2>
 	<p>Реализовать следующий функционал:</p>
 	<ol>
-		<li>Создать две кнопки в HTML: <b>start</b> и <b>stop</b>.</li>
-		<li>Создать класс <b>Timer</b> с полями <b>startTime</b>, <b>stopTime</b> и <b>interval</b>. Создать несколько экземпляров класса с разными значениями свойств, вывести их в консоль.</li>
-		<li>Для класса <b>Timer</b> создать методы <b>start</b> и <b>stop</b>, <b>getTime</b>.</li>
-		<li>Создать экземпляр класса <b>Timer</b>, пусть он называется <b>stopwatch</b>.</li>
-		<li>При нажатии на кнопку <b>start</b>, метод <b>stopwatch.start</b> сохраняет момент нажатия в свойство <b>startTime</b>.</li>
-		<li>При нажатии на кнопку <b>stop</b>, метод <b>stopwatch.stop</b> сохраняет значение текущего момента времени в <b>stopTime</b> и записывает разницу между <b>startTime</b> и <b>stopTime</b> в <b>interval</b>. А метод <b>stopwatch.getTime</b> возвращает значение поля <b>interval</b>, которое необходимо вывести в консоль.</li>
-		<li>Для класса <b>Timer</b> создать статический метод <b>timeToNY</b> который возвращает кол-во дней от сегодня и до Нового Года.</li>
+		<li>Создать базовый класс <code>Shape</code>, который принимает значения цвета и координат x и y: <code>color, initX, initY</code>.</li>
+		<li>Создать методы класса <code>Shape</code>:
+			<ul>
+				<li><code>getColor()</code> - возвращает значение цвета.</li>
+				<li><code>setColor(val)</code> - получает и записывает новое значение цвета.</li>
+				<li><code>getCoords()</code> - возвращает координаты x и y.</li>
+				<li><code>moveTo(newX, newY)</code> - принимает 2 параметра, новые значения для x и y и записывает их.</li>
+			</ul>
+		</li>
+		<li>Создать класс <code>Rectangle</code> который расширяет класс <code>Shape</code>, принимая значения цвета и начальных координат, как его родительский класс, и еще значение ширины и высоты сторон <code>initWidth</code> и <code>initHeight</code>:</li>
+		<li>Создать методы класса <code>Rectangle</code>:
+			<ul>
+				<li><code>setWidth(newWidth)</code>и <code>setHeight(newHeight)</code> - получают ширину/высоту и записывают новые значения.</li>
+				<li><code>getDims()</code> - метод который возвращает значения width и height.</li>
+				<li><code>draw()</code> - метод который имитирует рисование прямоугольника используя методы <code>Shape</code> и <code>Rectangle</code>, выводя в консоль браузера следующей информации. <img alt="" src="../images/module-16/draw-rect.png"></li>
+			</ul>
+		</li>
+		<li>Создать класс <code>Circle</code> который расширяет класс <code>Shape</code>, принимая значения цвета и начальных координат, как его родительский класс, и еще значение радиуса <code>initRadius</code>:</li>
+		<li>Создать методы класса <code>Circle</code>:
+			<ul>
+				<li><code>getRadius()</code> - возвращает текущее значение радиуса.</li>
+				<li><code>setRadius(val)</code> - получает значение и присваивает его радиусу.</li>
+				<li><code>draw()</code> - метод который имитирует рисование круга используя методы <code>Shape</code> и <code>Circle</code>, выводя в консоль браузера следующей информации. <img alt="" src="../images/module-16/draw-circle.png"></li>
+			</ul>
+		</li>
 	</ol>
-	<div class="input-form">
-        <button class="input-form__btn" id="start">Start</button>
-		<button class="input-form__btn" id="stop">Stop</button>
-	</div>
 	<div class="result" id="timer_result"></div>
-	<script src="js/main.js"></script>
+	<script src="js/main.js">
+	</script>
 </body>
-
 </html>
