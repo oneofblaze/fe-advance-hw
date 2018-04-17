@@ -20,6 +20,7 @@ class Shape {
 		this.initY = newY;
 	};
 }
+
 /*Создаем класс Rectangle который расширяет класс Shape,*/
 class Rectangle extends Shape {
 	constructor(color, initX, initY, initWidth, initHeight) {
@@ -38,13 +39,14 @@ class Rectangle extends Shape {
 	};
 	draw() {
 		console.log(`Drawing a Rectangle at:\n
-                  (x: ${this.initX}, y: ${this.initY})\n
-                  "With dimentions:\n
-                   height: ${this.initHeight}\n
-                   width: ${this.initWidth}\n
-                   Filled with color: ${this.color}`);
+		(x: ${this.initX}, y: ${this.initY})\n
+		With dimentions:\n
+		height: ${this.initHeight}\n
+		width: ${this.initWidth}\n
+		Filled with color: ${this.color}`);
 	};
 }
+
 /*Создаем класс Circle который расширяет класс Shape*/
 class Circle extends Rectangle {
 	constructor(color, initX, initY, initRadius) {
@@ -59,12 +61,13 @@ class Circle extends Rectangle {
 	};
 	draw() {
 		console.log(`Draw a Circle at:\n
-                    (x: ${this.initX}, y: ${this.initY})\n
-                    With dimentions:\n
-                    radius: ${this.initRadius}\n
-                    Filled with color: ${this.color}`);
+		(x: ${this.initX}, y: ${this.initY})\n
+		With dimentions:\n
+		radius: ${this.initRadius}\n
+		Filled with color: ${this.color}`);
 	};
 }
+
 /*создаем экземпляр класса Rectangle*/
 const rectangle = new Rectangle();
 rectangle.setColor('#009688');
@@ -73,6 +76,7 @@ rectangle.setWidth(100);
 rectangle.setHeight(100);
 console.log(`getDims for Rectangle: ${rectangle.getDims()}`);
 rectangle.draw();
+
 /*создаем экземпляр класса Circle*/
 circle = new Circle();
 circle.setColor('#FF5722');

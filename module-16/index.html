@@ -10,33 +10,34 @@
 	<h2>Модуль 16</h2>
 	<p>Реализовать следующий функционал:</p>
 	<ol>
-		<li>Создать базовый класс <code>Shape</code>, который принимает значения цвета и координат x и y: <code>color, initX, initY</code>.</li>
-		<li>Создать методы класса <code>Shape</code>:
+		<li>Создать базовый класс <b>Shape</b>, который принимает значения цвета и координат x и y: <b>color, initX, initY</b>.</li>
+		<li>Создать методы класса <b>Shape</b>:
 			<ul>
-				<li><code>getColor()</code> - возвращает значение цвета.</li>
-				<li><code>setColor(val)</code> - получает и записывает новое значение цвета.</li>
-				<li><code>getCoords()</code> - возвращает координаты x и y.</li>
-				<li><code>moveTo(newX, newY)</code> - принимает 2 параметра, новые значения для x и y и записывает их.</li>
+				<li><b>getColor()</b> - возвращает значение цвета.</li>
+				<li><b>setColor(val)</b> - получает и записывает новое значение цвета.</li>
+				<li><b>getCoords()</b> - возвращает координаты x и y.</li>
+				<li><b>moveTo(newX, newY)</b> - принимает 2 параметра, новые значения для x и y и записывает их.</li>
 			</ul>
 		</li>
-		<li>Создать класс <code>Rectangle</code> который расширяет класс <code>Shape</code>, принимая значения цвета и начальных координат, как его родительский класс, и еще значение ширины и высоты сторон <code>initWidth</code> и <code>initHeight</code>:</li>
-		<li>Создать методы класса <code>Rectangle</code>:
+		<li>Создать класс <b>Rectangle</b> который расширяет класс <b>Shape</b>, принимая значения цвета и начальных координат, как его родительский класс, и еще значение ширины и высоты сторон <b>initWidth</b> и <b>initHeight</b>:</li>
+		<li>Создать методы класса <b>Rectangle</b>:
 			<ul>
-				<li><code>setWidth(newWidth)</code>и <code>setHeight(newHeight)</code> - получают ширину/высоту и записывают новые значения.</li>
-				<li><code>getDims()</code> - метод который возвращает значения width и height.</li>
-				<li><code>draw()</code> - метод который имитирует рисование прямоугольника используя методы <code>Shape</code> и <code>Rectangle</code>, выводя в консоль браузера следующей информации. <img alt="" src="../images/module-16/draw-rect.png"></li>
+				<li><b>setWidth(newWidth)</b>и <b>setHeight(newHeight)</b> - получают ширину/высоту и записывают новые значения.</li>
+				<li><b>getDims()</b> - метод который возвращает значения width и height.</li>
+				<li><b>draw()</b> - метод который имитирует рисование прямоугольника используя методы <b>Shape</b> и <b>Rectangle</b>, выводя в консоль браузера следующей информации:</li>
+				<img alt="" src="img/draw-rect.png">
 			</ul>
 		</li>
-		<li>Создать класс <code>Circle</code> который расширяет класс <code>Shape</code>, принимая значения цвета и начальных координат, как его родительский класс, и еще значение радиуса <code>initRadius</code>:</li>
-		<li>Создать методы класса <code>Circle</code>:
+		<li>Создать класс <b>Circle</b> который расширяет класс <b>Shape</b>, принимая значения цвета и начальных координат, как его родительский класс, и еще значение радиуса <b>initRadius</b>:</li>
+		<li>Создать методы класса <b>Circle</b>:
 			<ul>
-				<li><code>getRadius()</code> - возвращает текущее значение радиуса.</li>
-				<li><code>setRadius(val)</code> - получает значение и присваивает его радиусу.</li>
-				<li><code>draw()</code> - метод который имитирует рисование круга используя методы <code>Shape</code> и <code>Circle</code>, выводя в консоль браузера следующей информации. <img alt="" src="../images/module-16/draw-circle.png"></li>
+				<li><b>getRadius()</b> - возвращает текущее значение радиуса.</li>
+				<li><b>setRadius(val)</b> - получает значение и присваивает его радиусу.</li>
+				<li><b>draw()</b> - метод который имитирует рисование круга используя методы <b>Shape</b> и <b>Circle</b>, выводя в консоль браузера следующей информации:</li>
+				<img alt="" src="img/draw-circle.png">
 			</ul>
 		</li>
 	</ol>
-	<div class="result" id="timer_result"></div>
 	<script src="js/main.js">
 	</script>
 </body>
