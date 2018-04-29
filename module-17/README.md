@@ -1,7 +1,4 @@
-# test_movinfo
-
-> A Vue.js project
-
+# Тест сборки webpack-simple-starter + VUE
 ## Build Setup
 
 ``` bash
